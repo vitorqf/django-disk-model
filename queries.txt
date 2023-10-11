@@ -1,0 +1,6 @@
+from core.sebo.models import Disk, Seal, Artist
+all_disks = Disk.objects.all()
+specific_disk = Disk.objects.get(name="Um Nós por dois Eus")
+filtered_artists = specific_disk.artists.all()
+sony_music_seal = Seal.objects.get(name="Sony Music")
+artists_on_sony_music = Artist.objects.filter(disk__seal=sony_music_seal)
